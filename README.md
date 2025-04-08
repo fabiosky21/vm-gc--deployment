@@ -1,75 +1,49 @@
-Google Cloud VM Deployment
-This project contains a Python script that automates the deployment of a virtual machine on Google Cloud.
+# Google Cloud VM Deployment                                                                                                    
+This project contains a python script that automates the deployment of virtual machine 
 
- What This Script Does
-Reserves a static external IP address
+## What this Script Does 
+- Reserves a static external IP address
+- creates a compute engine instance with: ubuntu 20.04 LTS -2vCPUs, 8 RAM -250GB boot disk 
+- Static external IP
 
-Creates a Compute Engine instance with:
+## Prerequisities 
+Before running the scritp, make sure you have the following: 
+- A google cloud project with billing enable (there is free option) 
+- Google cloud SDK installed and authneticated -run:
+  ````python
+  gcloud auth application-defaul login 
+- Enable the following APIs, compute engine and IAM
+- On visual studio code make sure installed python 
+- Installation of libraries
 
-OS: Ubuntu 20.04 LTS
+## Run the Script
 
-2 vCPUs
+- The script is ready to be used. Just copy and paste it, and install the required library:
 
-8 GB RAM
+```bash
+pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib
+```
 
-250 GB boot disk
+- Once successfully executed, it should print the relevant output.
 
-Static external IP
+## Google Console
 
- Prerequisites
-Before running the script, make sure you have the following:
+- There should now be an instance ready to use.  
+- Access the instance via SSH. Once inside, install Apache:
 
-A Google Cloud project with billing enabled (free tier is available)
-
-Google Cloud SDK installed and authenticated:
-
-bash
-Copy
-Edit
-gcloud auth application-default login
-Enable the following APIs:
-
-Compute Engine API
-
-IAM API
-
-On Visual Studio Code:
-
-Python installed
-
-Required libraries installed:
-
-bash
-Copy
-Edit
-pip install google-api-python-client oauth2client
-How to Run the Script
-Run the script:
-
-bash
-Copy
-Edit
-python script_name.py
-Once successfully executed, it should print the relevant output.
-
- After Deployment (Using Google Cloud Console)
-Go to the VM Instances section – your instance should be ready to use.
-
-Access the instance via SSH.
-
-Inside the instance, install Apache:
-
-bash
-Copy
-Edit
+ 
+```bash
 sudo apt update
 sudo apt install apache2
-Echo a simple message:
+```
 
-bash
-Copy
-Edit
+- Then echo "Hello World" or something else. If it returns the echo, it means it was successfully executed:
+
+```bash
 echo "Hello World" > /var/www/html/index.html
-In the Google Cloud Console, locate the External IP of your VM and open it in a browser.
+```
 
-You should see the message you echoed.
+## Then in the same Google Console
+
+There is an option called **External IP** — click it, and it should open a webpage displaying the message you typed.  
+*(If not, go back and repeat the steps.)*
