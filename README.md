@@ -18,13 +18,13 @@ Before running the scritp, make sure you have the following:
 
 ## Run the Script
 
-- The script is ready to be used. Just copy and paste it, and install the required library:
+- The script is ready to be used. Just copy and paste it on visual studio code, and install the required library:
 
 ```bash
 pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib
 ```
 
-- Once successfully executed, it should print the relevant output.
+- Once installed run the file and once successfully executed, it should print the relevant output.
 
 ## Google Console
 
